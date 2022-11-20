@@ -114,6 +114,6 @@ public class User extends BaseEntity implements Serializable {
                 ", gender=" + gender +
                 ", avatar='" + avatar + '\'' +
                 ", isDelete=" + isDelete +
-                '}';
+                "} " + super.toString();
     }
 }
