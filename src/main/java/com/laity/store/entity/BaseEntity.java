@@ -1,11 +1,13 @@
 package com.laity.store.entity;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * 作为实体类的基类
  */
-public class BaseEntity {
+public class BaseEntity implements Serializable {
     private String createdUser;
     private Date createdTime;
     private String modifiedUser;
@@ -41,5 +43,27 @@ public class BaseEntity {
 
     public void setModifiedTime(Date modifiedTime) {
         this.modifiedTime = modifiedTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BaseEntity that)) return false;
+        return Objects.equals(getCreatedUser(), that.getCreatedUser()) && Objects.equals(getCreatedTime(), that.getCreatedTime()) && Objects.equals(getModifiedUser(), that.getModifiedUser()) && Objects.equals(getModifiedTime(), that.getModifiedTime());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCreatedUser(), getCreatedTime(), getModifiedUser(), getModifiedTime());
+    }
+
+    @Override
+    public String toString() {
+        return "BaseEntity{" +
+                "createdUser='" + createdUser + '\'' +
+                ", createdTime=" + createdTime +
+                ", modifiedUser='" + modifiedUser + '\'' +
+                ", modifiedTime=" + modifiedTime +
+                '}';
     }
 }
