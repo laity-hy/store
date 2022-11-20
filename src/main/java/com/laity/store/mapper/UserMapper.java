@@ -1,10 +1,12 @@
 package com.laity.store.mapper;
 
 import com.laity.store.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 用户模块的持久层接口
  */
+//@Mapper
 public interface UserMapper {
     /**
      * 插入用户的数据
