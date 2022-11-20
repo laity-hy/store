@@ -13,7 +13,7 @@ public class UserMapperTests {
     @Test
     public void insert() {
         User user = new User();
-        user.setUsername("laity003");
+        user.setUsername("laity004");
         user.setPassword("123456789");
         Integer result = userMapper.insert(user);
         System.out.println(result);
