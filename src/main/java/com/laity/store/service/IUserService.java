@@ -1,10 +1,12 @@
 package com.laity.store.service;
 
 import com.laity.store.entity.User;
+import org.springframework.stereotype.Service;
 
 /**
  * 用户模块业务层接口
  */
+
 public interface IUserService {
     /**
      * 用户注册方法

@@ -6,12 +6,14 @@ import com.laity.store.service.IUserService;
 import com.laity.store.service.ex.InsertException;
 import com.laity.store.service.ex.UsernameDuplicatedException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
 /**
  * 用户模块业务层的实现类
  */
+@Service
 public class IUserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
@@ -33,7 +35,7 @@ public class IUserServiceImpl implements IUserService {
         Date date = new Date();
         user.setCreatedUser(user.getUsername());
         user.setCreatedTime(date);
-        user.setModifiedUser(user.getModifiedUser());
+        user.setModifiedUser(user.getUsername());
         user.setModifiedTime(date);
 
         //执行注册业务功能的实现
